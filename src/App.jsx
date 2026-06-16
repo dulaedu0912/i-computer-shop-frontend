@@ -1,23 +1,26 @@
 import { useState } from 'react'
 import './App.css'
-import ProductCard from './components/productCard'
+import Test from './components/test'
+import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+import Homepage from './pages/homePage'
+import LoginPage from './pages/loginPage'
+import RegisterPage from './pages/registerPage'
+
 
 function App() {
-  
+  return ( 
+    <BrowserRouter>
+      <div className='w-full h-screen bg-amber-500'>
 
-  return (
-    <>
-      <div className="h-[600px] w-[600px] border bg-gray-600 relative" >
-        <div className = "h-[500px] w-[500px] bg-yellow-100 flex flex-col items-center justify-center">
-          <div className="h-[100px] w-[100px] bg-red-400 fixed top-[550px] left-[550px]" ></div>
-          <div className="h-[100px] w-[100px] bg-green-400 absolute right-[20px] bottom-[20px]"></div>
-          <div className="h-[100px] w-[100px] bg-purple-400"></div>
-          <div className="h-[100px] w-[100px] bg-blue-400"></div>
-        </div>
+        <Routes>
+          <Route path="/" element={<Homepage/>}/>
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/register" element={<RegisterPage/>} />
+        </Routes>
 
-      </div>
-    </>
-    
+      </div>      
+    </BrowserRouter>
   )
 }
 
